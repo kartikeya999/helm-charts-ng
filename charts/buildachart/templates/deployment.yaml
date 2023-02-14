@@ -13,12 +13,9 @@ spec:
   selector:
     matchLabels:
       {{- include "buildachart.selectorLabels" . | nindent 6 }}
-      release: {{ .Release.Name }} 
   template:
     metadata:
       {{- with .Values.podAnnotations }}
-      release: {{ .Release.Name }}  
-      harness.io/release: {{ .Release.Name }}  
       annotations:
         {{- toYaml . | nindent 8 }}
       {{- end }}
