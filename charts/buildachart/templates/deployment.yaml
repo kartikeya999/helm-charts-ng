@@ -21,6 +21,8 @@ spec:
       {{- end }}
       labels:
         {{- include "buildachart.selectorLabels" . | nindent 8 }}
+        release: {{ .Release.Name }} 
+        harness.io/release: {{ .Release.Name }}
     spec:
       {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
