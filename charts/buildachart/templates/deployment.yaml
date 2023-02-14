@@ -4,9 +4,12 @@ metadata:
   name: {{ include "buildachart.fullname" . }}
   labels:
     {{- include "buildachart.labels" . | nindent 4 }}
+    release: "{{ .Release.Name }}" 
+    harness.io/release: {{ .Release.Name }}
 spec:
   {{- if not .Values.autoscaling.enabled }}
   replicas: {{ .Values.replicaCount }}
+  
   {{- end }}
   selector:
     matchLabels:
