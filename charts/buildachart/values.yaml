@@ -6,7 +6,7 @@ replicaCount: 20
 release: test
 
 image:
-  repository: nginx
+  repository: pearl
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
   tag: ""
